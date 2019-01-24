@@ -7,6 +7,8 @@ import (
 
 var Checkers = []Checker{
 	Checker{name: "Twitter", url: "https://twitter.com/"},
+	Checker{name: "Facebook", url: "https://www.facebook.com/"},
+	Checker{name: "Instagram", url: "https://www.instagram.com/"},
 }
 
 type Checker struct {
@@ -24,6 +26,8 @@ func (c Checker) exists(account string) (bool, error) {
 }
 
 func Run(account string) error {
+	fmt.Printf("Search Account: %v", account)
+
 	for _, c := range Checkers {
 		exists, err := c.exists(account)
 		if err != nil {
@@ -36,7 +40,7 @@ func Run(account string) error {
 			msg = "OK! No Exists!"
 		}
 
-		fmt.Printf("%v : %v", c.name, msg)
+		fmt.Printf("%v : %v \n", c.name, msg)
 	}
 	return nil
 }
