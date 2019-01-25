@@ -2,8 +2,15 @@
 Function to check if an SNS account exists.  
 This is bata release.  
   
-Check SNS: **Twitter/Facebook/Instagram**  
-Available OS: **Linux/Mac/Windows**
+Check SNS: 
+* Twitter
+* Facebook
+* Instagram
+
+Available OS: 
+* Linux
+* Mac
+* Windows
 
 ## Download
 https://github.com/nesheep5/checo/releases/download/0-0-1/checo_exec.zip
