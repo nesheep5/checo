@@ -26,7 +26,11 @@ func (c Checker) exists(account string) (bool, error) {
 }
 
 func Run(account string) error {
-	fmt.Printf("Search Account: %v", account)
+	if account == "" {
+		fmt.Errorf("account is required.") 
+	}
+
+	fmt.Printf("Search Account: %v \n\n", account)
 
 	for _, c := range Checkers {
 		exists, err := c.exists(account)
