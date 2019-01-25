@@ -1,18 +1,20 @@
 # checo
 Function to check if an SNS account exists.  
 This is bata release.  
-Check Only Twitter/Facebook/Instagram.  
+  
+Check SNS: **Twitter/Facebook/Instagram**  
+Available OS: **Linux/Mac/Windows**
 
-## download
+## Download
 https://github.com/nesheep5/checo/releases/download/0-0-1/checo_exec.zip
 
-## usage
-```bash
+## Usage
+```
 $ ./checo account_name
 ```
 
-## example
-```bash
+## Example
+```
 $ ./checo nesheep5
 Search Account: nesheep5
 
