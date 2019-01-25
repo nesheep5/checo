@@ -1,4 +1,4 @@
-# checo
+# Checo
 Function to check if an SNS account exists.  
 This is bata release.  
   
