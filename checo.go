@@ -6,18 +6,18 @@ import (
 )
 
 var Checkers = []Checker{
-	Checker{name: "Twitter", url: "https://twitter.com/"},
-	Checker{name: "Facebook", url: "https://www.facebook.com/"},
-	Checker{name: "Instagram", url: "https://www.instagram.com/"},
+	Checker{Name: "Twitter", Url: "https://twitter.com/"},
+	Checker{Name: "Facebook", Url: "https://www.facebook.com/"},
+	Checker{Name: "Instagram", Url: "https://www.instagram.com/"},
 }
 
 type Checker struct {
-	name string
-	url  string
+	Name string
+	Url  string
 }
 
 func (c Checker) exists(account string) (bool, error) {
-	resp, err := http.Get(c.url + account)
+	resp, err := http.Get(c.Url + account)
 	if err != nil {
 		return false, err
 	}
@@ -27,7 +27,7 @@ func (c Checker) exists(account string) (bool, error) {
 
 func Run(account string) error {
 	if account == "" {
-		fmt.Errorf("account is required.") 
+		fmt.Errorf("account is required.")
 	}
 
 	fmt.Printf("Search Account: %v \n\n", account)
@@ -44,7 +44,7 @@ func Run(account string) error {
 			msg = "OK! No Exists!"
 		}
 
-		fmt.Printf("%v : %v \n", c.name, msg)
+		fmt.Printf("%v : %v \n", c.Name, msg)
 	}
 	return nil
 }

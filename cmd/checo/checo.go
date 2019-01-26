@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -14,13 +15,29 @@ func main() {
 	app.Name = "checo"
 	app.Usage = "Function to check if an SNS account exists."
 	app.Version = "0.0.1"
-	app.Action = func(c *cli.Context) error {
-		if c.NArg() != 1 {
-			cli.ShowAppHelpAndExit(c, 0)
-		}
 
-		account := c.Args().Get(0)
-		return checo.Run(account)
+	app.Commands = []cli.Command{
+		{
+			Name:    "list",
+			Aliases: []string{"l"},
+			Usage:   "show checking SNS list",
+			Action: func(c *cli.Context) error {
+				fmt.Println("checking SNS list:")
+				for _, ch := range checo.Checkers {
+					fmt.Printf("  %v", ch.Name)
+				}
+				return nil
+			},
+		},
+		{
+			Name:    "check",
+			Aliases: []string{"c"},
+			Usage:   "checking SNS account",
+			Action: func(c *cli.Context) error {
+				account := c.Args().Get(0)
+				return checo.Run(account)
+			},
+		},
 	}
 
 	err := app.Run(os.Args)
