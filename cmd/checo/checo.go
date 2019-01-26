@@ -20,9 +20,9 @@ func main() {
 		{
 			Name:    "list",
 			Aliases: []string{"l"},
-			Usage:   "show checking SNS list",
+			Usage:   "Shows checking SNS list",
 			Action: func(c *cli.Context) error {
-				fmt.Println("checking SNS list:")
+				fmt.Println("Checking SNS list:")
 				for _, ch := range checo.Checkers {
 					fmt.Printf("  %v", ch.Name)
 				}
@@ -32,7 +32,7 @@ func main() {
 		{
 			Name:    "check",
 			Aliases: []string{"c"},
-			Usage:   "checking SNS account",
+			Usage:   "Checking SNS account",
 			Action: func(c *cli.Context) error {
 				account := c.Args().Get(0)
 				return checo.Run(account)
