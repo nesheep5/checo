@@ -7,7 +7,7 @@ Check SNS:
 ## Installation or Download
 ### Installation
 ```
-$ go install github.com/nesheep5/checo/cmd/checo
+$ go get github.com/nesheep5/checo/cmd/checo
 ```
 
 ### Download
