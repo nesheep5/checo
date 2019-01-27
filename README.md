@@ -1,11 +1,10 @@
-# Checo
-Function to check if an SNS account exists.  
-This is bata release.  
+# checo
+Checo is CLI to check if an SNS account exists.
   
-Check SNS: 
+Check SNS:   
  Twitter / Facebook / Instagram  
 
-Available OS: 
+Available OS:   
  Linux / Mac / Windows
 
 ## Installation or Download
