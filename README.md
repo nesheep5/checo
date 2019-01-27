@@ -4,9 +4,6 @@ Checo is CLI to check if an SNS account exists.
 Check SNS:   
  Twitter / Facebook / Instagram  
 
-Available OS:   
- Linux / Mac / Windows
-
 ## Installation or Download
 ### Installation
 ```
@@ -14,7 +11,9 @@ $ go install github.com/nesheep5/checo/cmd/checo
 ```
 
 ### Download
-You can also download and use the executable file.
+You can also download and use the executable file.  
+Available OS : Linux / Mac / Windows  
+  
 https://github.com/nesheep5/checo/releases/download/0-0-1/checo_exec.zip
 
 ## Usage
