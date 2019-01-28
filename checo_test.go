@@ -2,34 +2,27 @@ package checo
 
 import "testing"
 
-func TestExistsTwitter(t *testing.T) {
-	b, err := CheckerMap["Twitter"].Exists("nesheep5")
-	if err != nil {
-		t.Errorf("Occerd Error. err: %v", err)
-	}
-	actual := true
-	if b != actual {
-		t.Errorf("'Exists' got %v, want %v", b, actual)
-	}
+type TestData struct {
+	SNS     string
+	Account string
+	Actual  bool
 }
 
-func TestExistsFacebook(t *testing.T) {
-	b, err := CheckerMap["Facebook"].Exists("shogo.watanabe.583")
-	if err != nil {
-		t.Errorf("Occerd Error. err: %v", err)
+func TestExists(t *testing.T) {
+	tds := []TestData{
+		TestData{"Twitter", "nesheep5", true},
+		TestData{"Facebook", "shogo.watanabe.583", true},
+		TestData{"Instagram", "shogo.mizuno", true},
 	}
-	actual := true
-	if b != actual {
-		t.Errorf("'Exists' got %v, want %v", b, actual)
-	}
-}
-func TestExistsInstagram(t *testing.T) {
-	b, err := CheckerMap["Instagram"].Exists("shogo.mizuno")
-	if err != nil {
-		t.Errorf("Occerd Error. err: %v", err)
-	}
-	actual := true
-	if b != actual {
-		t.Errorf("'Exists' got %v, want %v", b, actual)
+	for _, td := range tds {
+		t.Run(td.SNS, func(t *testing.T) {
+			b, err := CheckerMap[td.SNS].Exists(td.Account)
+			if err != nil {
+				t.Errorf("Occerd Error. err: %v", err)
+			}
+			if b != td.Actual {
+				t.Errorf("'Exists' got %v, want %v", b, td.Actual)
+			}
+		})
 	}
 }
