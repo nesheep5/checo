@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/nesheep5/checo.svg?style=svg)](https://circleci.com/gh/nesheep5/checo)
 # checo
 Checo is CLI to check if an SNS account exists.
   
