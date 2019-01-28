@@ -23,7 +23,7 @@ func main() {
 			Usage:   "Shows checking SNS list",
 			Action: func(c *cli.Context) error {
 				fmt.Println("Checking SNS list:")
-				for _, ch := range checo.Checkers {
+				for _, ch := range checo.CheckerMap {
 					fmt.Printf("  %v", ch.Name)
 				}
 				return nil
@@ -35,7 +35,28 @@ func main() {
 			Usage:   "Checking SNS account",
 			Action: func(c *cli.Context) error {
 				account := c.Args().Get(0)
-				return checo.Run(account)
+				if account == "" {
+					fmt.Errorf("account is required.")
+				}
+
+				fmt.Printf("Search Account: %v \n\n", account)
+
+				for _, c := range checo.CheckerMap {
+					exists, err := c.Exists(account)
+					if err != nil {
+						return err
+					}
+
+					var msg string
+					if exists {
+						msg = "Oops! Alrady Exists..."
+					} else {
+						msg = "OK! No Exists!"
+					}
+
+					fmt.Printf("%v : %v \n", c.Name, msg)
+				}
+				return nil
 			},
 		},
 	}
