@@ -15,7 +15,7 @@ $ go get github.com/nesheep5/checo/cmd/checo
 You can also download and use the executable file.  
 Available OS : Linux / Mac / Windows  
   
-https://github.com/nesheep5/checo/releases/download/0-0-1/checo_exec.zip
+https://github.com/nesheep5/checo/releases/latest
 
 ## Usage
 ```
@@ -26,7 +26,7 @@ USAGE:
    checo [global options] command [command options] [arguments...]
 
 VERSION:
-   0.0.1
+   v1.0.0
 
 COMMANDS:
      list, l   Shows checking SNS list
