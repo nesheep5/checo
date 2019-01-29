@@ -15,7 +15,7 @@ $ go get github.com/nesheep5/checo/cmd/checo
 You can also download and use the executable file.  
 Available OS : Linux / Mac / Windows  
   
-https://github.com/nesheep5/checo/releases/tag/lastest
+https://github.com/nesheep5/checo/releases/latest
 
 ## Usage
 ```
