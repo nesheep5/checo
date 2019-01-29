@@ -14,7 +14,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "checo"
 	app.Usage = "Function to check if an SNS account exists."
-	app.Version = "0.0.1"
+	app.Version = "v1.0.0"
 
 	app.Commands = []cli.Command{
 		{
