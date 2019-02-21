@@ -29,6 +29,7 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run: go build
+      - run: go get github.com/jstemmer/go-junit-report
       - run:
           name: Run Unit Test
           command: |
