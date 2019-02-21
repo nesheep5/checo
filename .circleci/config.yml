@@ -35,3 +35,10 @@ jobs:
           command: |
             trap "go-junit-report <${TEST_RESULTS}/go-test.out > ${TEST_RESULTS}/go-test-report.xml" EXIT
             go test -v ./... | tee ${TEST_RESULTS}/go-test.out
+
+      - store_artifacts: # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: /tmp/test-results
+          destination: raw-test-output
+
+      - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: /tmp/test-results
